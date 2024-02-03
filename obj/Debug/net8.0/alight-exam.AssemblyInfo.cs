@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("alight-exam")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2eac7dad7bb8d8a253d29e5d5614b61e7a7fdf74")]
 [assembly: System.Reflection.AssemblyProductAttribute("alight-exam")]
 [assembly: System.Reflection.AssemblyTitleAttribute("alight-exam")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
