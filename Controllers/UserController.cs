@@ -1,7 +1,7 @@
 ﻿using alight_exam.Models;
 using alight_exam.Service;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace alight_exam.Controllers
 {
@@ -19,22 +19,34 @@ namespace alight_exam.Controllers
 
         [HttpGet]        
         [Route("{Id}")]
-        public HttpResponseMessage Get(long id) {
-            throw new NotImplementedException();
+        public IActionResult Get(int id) {
+            return Ok(_userService.GetUserById(id));
         }
 
         [HttpPost]
         [Route("")]
-        public HttpResponseMessage Add([FromBody] User user)
+        public IActionResult Add([FromBody] User user)
         {
-            throw new NotImplementedException();
+            Dictionary<string, string> errorMsgDict = new Dictionary<string, string>();
+            var newUser = _userService.CreateUser(user, ref errorMsgDict);
+
+            if (newUser == null)
+                return BadRequest(errorMsgDict);
+
+            return Created("", newUser);
         }
 
         [HttpPut]
-        [Route("{Id}")]
-        public HttpResponseMessage Update([FromBody] User user, int Id)
+        [Route("")]
+        public IActionResult Update([FromBody] User user)
         {
-            throw new NotImplementedException();
+            Dictionary<string, string> errorMsgDict = new Dictionary<string, string>();
+            var newUser = _userService.UpdateUser(user, ref errorMsgDict);
+
+            if (newUser == null)
+                return BadRequest(errorMsgDict);
+
+            return Ok(newUser);
         }
     }
 }
