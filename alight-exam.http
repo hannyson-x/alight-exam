@@ -1,0 +1,6 @@
+@alight_exam_HostAddress = http://localhost:5057
+
+GET {{alight_exam_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
